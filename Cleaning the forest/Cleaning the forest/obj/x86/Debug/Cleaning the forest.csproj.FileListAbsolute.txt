@@ -1,0 +1,33 @@
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Cleaning the forest.exe
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Cleaning the forest.pdb
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\MonoGame.Framework.dll
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.dll
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.XAudio2.dll
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.Direct3D11.dll
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.DXGI.dll
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.Direct2D1.dll
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.XInput.dll
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.RawInput.dll
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.Direct3D9.dll
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\MonoGame.Framework.xml
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.xml
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.XAudio2.xml
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.Direct3D11.xml
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.DXGI.xml
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.Direct2D1.xml
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.XInput.xml
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.RawInput.xml
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\SharpDX.Direct3D9.xml
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\obj\x86\Debug\Cleaning the forest.exe
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\obj\x86\Debug\Cleaning the forest.pdb
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Content\Button1_StartMenu.png
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Content\Button2_StartMenu.png
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Content\Button3_StartMenu.png
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Content\Picture_StartMenu.png
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Content\Background_01.png
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Content\Background_02.png
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Content\Spraite_BlackDragon.png
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Content\GameNameText.png
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\obj\x86\Debug\Cleaning the forest.csprojResolveAssemblyReference.cache
