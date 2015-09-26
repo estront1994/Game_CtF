@@ -30,12 +30,12 @@ namespace Cleaning_the_forest
 
         public void UpdateRight_Scrolling_Background()
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Right)) Rec_Background.X -= 5;
+            if (Keyboard.GetState().IsKeyDown(Keys.D)) Rec_Background.X -= 5;
         }
 
         public void UpdateLeft_Scrolling_Background()
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Left)) Rec_Background.X += 5;
+            if (Keyboard.GetState().IsKeyDown(Keys.A)) Rec_Background.X += 5;
         }
     }
 }

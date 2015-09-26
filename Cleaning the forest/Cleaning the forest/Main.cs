@@ -25,14 +25,16 @@ namespace Cleaning_the_forest
         //Объявление кнопок
         cButton Button_Start, Button_Rating, Button_Exit;
         // Параметры экраны игры
-        int screenWidth = 1280, screenHeight = 720;
+        //int screenWidth = 1024, screenHeight = 640;
+        int screenWidth = 1240, screenHeight = 720;
 
         private MainScrolling Scrolling_Background_1;
         private MainScrolling Scrolling_Background_2;
-        private Hero sprite;
+        private Hero[] sprite_Hero = new Hero[2];
         private int ScreenWidth;
         private int ScreenHeight;
 
+        public int nHero=0;
 
         public Main()
         {
@@ -42,7 +44,8 @@ namespace Cleaning_the_forest
 
         protected override void Initialize()
         {
-            sprite = new Hero(Content.Load<Texture2D>("Spraite_HeroDruid.png"), new Vector2(100, 600), 145, 185);
+            sprite_Hero[0] = new Hero(Content.Load<Texture2D>("Spraite_HeroDruid.png"), new Vector2(100, 600), 145, 185);
+            sprite_Hero[1] = new Hero(Content.Load<Texture2D>("Spraite_BlackDragon.png"), new Vector2(100, 600), 145, 185);
             base.Initialize();
         }
 
@@ -117,17 +120,29 @@ namespace Cleaning_the_forest
                         Scrolling_Background_2.Rec_Background.X = Scrolling_Background_1.Rec_Background.X + Scrolling_Background_1.Tex_Background.Width;
 
 
-                    if ((sprite.Position.X >= ScreenHeight) & (Keyboard.GetState().IsKeyDown(Keys.Right)))
+
+                    if (Keyboard.GetState().IsKeyDown(Keys.D1)) nHero = 0;
+                    if (Keyboard.GetState().IsKeyDown(Keys.D2)) nHero = 1;
+
+
+
+                    if (nHero == 0) sprite_Hero[0].setinterval(50);
+                    if (nHero == 1) sprite_Hero[1].setinterval(150);
+
+
+
+
+                    if ((sprite_Hero[nHero].Position.X >= ScreenHeight) & (Keyboard.GetState().IsKeyDown(Keys.D)))
                     {
-                        sprite.Update_AnimationBlackDragon_Stop(gameTime);
+                        sprite_Hero[nHero].Update_AnimationBlackDragon_Stop(gameTime);
                         Scrolling_Background_1.UpdateRight_Scrolling_Background();
                         Scrolling_Background_2.UpdateRight_Scrolling_Background();
                     }
                     else
                     {
-                        if (((sprite.Position.X <= 100) & (Keyboard.GetState().IsKeyDown(Keys.Left))))
-                            sprite.Update_AnimationBlackDragon_Stop(gameTime);
-                        sprite.Update_AnimationBlackDragon(gameTime);
+                        if (((sprite_Hero[nHero].Position.X <= 100) & (Keyboard.GetState().IsKeyDown(Keys.A))))
+                            sprite_Hero[nHero].Update_AnimationBlackDragon_Stop(gameTime);
+                        sprite_Hero[nHero].Update_AnimationBlackDragon(gameTime);
                     }
                     break;
             }
@@ -153,7 +168,7 @@ namespace Cleaning_the_forest
                 case GameState.Playing:
                     Scrolling_Background_1.Draw(spriteBatch);
                     Scrolling_Background_2.Draw(spriteBatch);
-                    sprite.Draw(spriteBatch);
+                    sprite_Hero[nHero].Draw(spriteBatch);
                     break;
             }
             //base.Draw(gameTime);

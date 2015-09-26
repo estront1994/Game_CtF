@@ -41,7 +41,7 @@ namespace Cleaning_the_forest
             Position = Position + velosity;
 
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 Right(gametime);
                 velosity.X = 5;
@@ -49,7 +49,7 @@ namespace Cleaning_the_forest
             }
             else
             {
-                if (Keyboard.GetState().IsKeyDown(Keys.Left) & (Position.X > 100))
+                if (Keyboard.GetState().IsKeyDown(Keys.A) & (Position.X > 100))
                 {
                     Left(gametime);
                     velosity.X = -5;
@@ -68,7 +68,7 @@ namespace Cleaning_the_forest
             originalPosition = new Vector2(Rec_BlackDragon.Width / 2, Rec_BlackDragon.Height / 2);
             Position = Position + velosity;
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 Right(gametime);
                 velosity.X = 0;
@@ -76,7 +76,7 @@ namespace Cleaning_the_forest
             }
             else
             {
-                if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                if (Keyboard.GetState().IsKeyDown(Keys.A))
                 {
                     Left(gametime);
                     velosity.X = 0;
@@ -110,6 +110,11 @@ namespace Cleaning_the_forest
                 timer = 0;
                 if (frameCurrent > 18 || frameCurrent < 16) frameCurrent = 16;
             }
+        }
+
+        public void setinterval(float newintervaln)
+        {
+            interval = newintervaln;
         }
 
         public void Draw(SpriteBatch spriteBatch)
