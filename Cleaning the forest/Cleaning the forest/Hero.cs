@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Cleaning_the_forest
 {
-    class AnimationBlackDragon
+    class Hero
     {
         public Texture2D Tex_BlackDragon;
         public Rectangle Rec_BlackDragon;
@@ -22,10 +22,10 @@ namespace Cleaning_the_forest
         public int frameCurrent;
 
         public float timer;
-        public float interval = 150;
+        public float interval = 50;
 
 
-        public AnimationBlackDragon(Texture2D newTex_BlackDragon, Vector2 newPosition, int newframeHeight, int newframeWidth)
+        public Hero(Texture2D newTex_BlackDragon, Vector2 newPosition, int newframeHeight, int newframeWidth)
         {
 
             Tex_BlackDragon = newTex_BlackDragon;

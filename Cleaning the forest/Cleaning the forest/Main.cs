@@ -29,7 +29,7 @@ namespace Cleaning_the_forest
 
         private MainScrolling Scrolling_Background_1;
         private MainScrolling Scrolling_Background_2;
-        private AnimationBlackDragon sprite;
+        private Hero sprite;
         private int ScreenWidth;
         private int ScreenHeight;
 
@@ -42,7 +42,7 @@ namespace Cleaning_the_forest
 
         protected override void Initialize()
         {
-            sprite = new AnimationBlackDragon(Content.Load<Texture2D>("Spraite_BlackDragon"), new Vector2(100, 600), 145, 185);
+            sprite = new Hero(Content.Load<Texture2D>("Spraite_HeroDruid.png"), new Vector2(100, 600), 145, 185);
             base.Initialize();
         }
 
