@@ -30,11 +30,11 @@ namespace Cleaning_the_forest
 
         private MainScrolling Scrolling_Background_1;
         private MainScrolling Scrolling_Background_2;
-        private Hero[] sprite_Hero = new Hero[2];
+        private Hero[] sprite_Hero = new Hero[3];
         private int ScreenWidth;
         private int ScreenHeight;
 
-        public int nHero=0;
+        public int nHero=2;
 
         public Main()
         {
@@ -46,6 +46,7 @@ namespace Cleaning_the_forest
         {
             sprite_Hero[0] = new Hero(Content.Load<Texture2D>("Spraite_HeroDruid.png"), new Vector2(100, 600), 145, 185);
             sprite_Hero[1] = new Hero(Content.Load<Texture2D>("Spraite_BlackDragon.png"), new Vector2(100, 600), 145, 185);
+            sprite_Hero[2] = new Hero(Content.Load<Texture2D>("NewSpraiteHero.png"), new Vector2(100, 600), 165, 185);
             base.Initialize();
         }
 

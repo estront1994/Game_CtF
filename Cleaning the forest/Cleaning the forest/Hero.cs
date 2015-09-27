@@ -22,7 +22,7 @@ namespace Cleaning_the_forest
         public int frameCurrent;
 
         public float timer;
-        public float interval = 50;
+        public float interval = 80;
 
 
         public Hero(Texture2D newTex_BlackDragon, Vector2 newPosition, int newframeHeight, int newframeWidth)
@@ -56,7 +56,10 @@ namespace Cleaning_the_forest
                 }
                 else
                 {
-
+                    if (velosity.X > 3)
+                    {
+                        frameCurrent = 9;
+                    }
                     velosity = Vector2.Zero;
                 }
             }
