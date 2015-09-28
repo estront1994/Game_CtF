@@ -25,8 +25,7 @@ namespace Cleaning_the_forest
         //Объявление кнопок
         cButton Button_Start, Button_Rating, Button_Exit;
         // Параметры экраны игры
-        //int screenWidth = 1024, screenHeight = 640;
-        int screenWidth = 1240, screenHeight = 720;
+        int screenWidth = 1366, screenHeight = 768;
 
         private MainScrolling Scrolling_Background_1;
         private MainScrolling Scrolling_Background_2;
@@ -46,7 +45,7 @@ namespace Cleaning_the_forest
         {
             sprite_Hero[0] = new Hero(Content.Load<Texture2D>("Spraite_HeroDruid.png"), new Vector2(100, 600), 145, 185);
             sprite_Hero[1] = new Hero(Content.Load<Texture2D>("Spraite_BlackDragon.png"), new Vector2(100, 600), 145, 185);
-            sprite_Hero[2] = new Hero(Content.Load<Texture2D>("NewSpraiteHero.png"), new Vector2(100, 600), 165, 185);
+            sprite_Hero[2] = new Hero(Content.Load<Texture2D>("NewSpraiteHero.png"), new Vector2(100, 490), 165, 185);
             base.Initialize();
         }
 
@@ -74,8 +73,8 @@ namespace Cleaning_the_forest
             Button_Exit.setPosition(new Vector2(110, 470));
             Button_Exit.sizeButton(new Vector2(160, 83));
             //////////////////////////////////////////////////////////////////////////////////////////////////////////
-            Scrolling_Background_1 = new MainScrolling(Content.Load<Texture2D>("Background_01"), new Rectangle(0, 0, 1280, 720));
-            Scrolling_Background_2 = new MainScrolling(Content.Load<Texture2D>("Background_02"), new Rectangle(1280, 0, 1280, 720));
+            Scrolling_Background_1 = new MainScrolling(Content.Load<Texture2D>("Background_01"), new Rectangle(0, 0, 2732, 768));
+            Scrolling_Background_2 = new MainScrolling(Content.Load<Texture2D>("Background_01"), new Rectangle(2732, 0, 2732, 768));
 
             ScreenWidth = GraphicsDevice.Viewport.Width;
             ScreenHeight = GraphicsDevice.Viewport.Height;
