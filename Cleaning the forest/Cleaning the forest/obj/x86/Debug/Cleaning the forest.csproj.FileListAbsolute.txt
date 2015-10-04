@@ -33,3 +33,5 @@ D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning t
 D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\obj\x86\Debug\Cleaning the forest.csprojResolveAssemblyReference.cache
 D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Content\Spraite_HeroDruid.png
 D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Content\NewSpraiteHero.png
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Content\Background.png
+D:\Documents\Projects\Microsoft Visual Studio\CtF\Cleaning the forest\Cleaning the forest\bin\Windows\Debug\Content\Hud.png

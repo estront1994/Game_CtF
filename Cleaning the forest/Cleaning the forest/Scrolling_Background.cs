@@ -13,29 +13,28 @@ namespace Cleaning_the_forest
         public Texture2D Tex_Background;
         public Rectangle Rec_Background;
 
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
+        public void Draw(SpriteBatch spriteBatch){
             spriteBatch.Draw(Tex_Background, Rec_Background, Color.White);
         }
     }
 
-    class MainScrolling : Scrolling_Background
-    {
-        public MainScrolling(Texture2D newTex_Background, Rectangle newRec_Background)
-        {
+    class MainScrolling : Scrolling_Background{
+        public MainScrolling(Texture2D newTex_Background, Rectangle newRec_Background){
             Tex_Background = newTex_Background;
             Rec_Background = newRec_Background;
         }
 
-        public void UpdateRight_Scrolling_Background()
-        {
+        public void UpdateRight_Scrolling_Background(){
             if (Keyboard.GetState().IsKeyDown(Keys.D)) Rec_Background.X -= 5;
         }
-
-        public void UpdateLeft_Scrolling_Background()
-        {
+        public void UpdateLeft_Scrolling_Background(){
             if (Keyboard.GetState().IsKeyDown(Keys.A)) Rec_Background.X += 5;
+        }
+        public void UpdateTop_Scrolling_Background(){
+            if (Keyboard.GetState().IsKeyDown(Keys.W)) Rec_Background.Y += 5;
+        }
+        public void UpdateBot_Scrolling_Background(){
+            if (Keyboard.GetState().IsKeyDown(Keys.S)) Rec_Background.Y -= 5;
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Cleaning_the_forest
         {
             sprite_Hero[0] = new Hero(Content.Load<Texture2D>("Spraite_HeroDruid.png"), new Vector2(100, 600), 145, 185);
             sprite_Hero[1] = new Hero(Content.Load<Texture2D>("Spraite_BlackDragon.png"), new Vector2(100, 600), 145, 185);
-            sprite_Hero[2] = new Hero(Content.Load<Texture2D>("NewSpraiteHero.png"), new Vector2(100, 490), 165, 185);
+            sprite_Hero[2] = new Hero(Content.Load<Texture2D>("NewSpraiteHero.png"), new Vector2(150, 200), 135, 148);
             base.Initialize();
         }
 
@@ -61,7 +61,7 @@ namespace Cleaning_the_forest
             // Загрузка название игры на экран методм load и компонентом
             //GameNameText = Content.Load<Texture2D>("GameNameText.png");
             Services.AddService(typeof(SpriteBatch), spriteBatch);
-            texture = Content.Load<Texture2D>("GameNameText.png");
+            texture = Content.Load<Texture2D>("Hud.png");
             // Загрузка кнопок на экран //////////////////////////////////////////////////////////////////////////////
             Button_Start = new cButton(Content.Load<Texture2D>("Button1_StartMenu.png"), graphics.GraphicsDevice);
             Button_Rating = new cButton(Content.Load<Texture2D>("Button2_StartMenu.png"), graphics.GraphicsDevice);
@@ -73,7 +73,7 @@ namespace Cleaning_the_forest
             Button_Exit.setPosition(new Vector2(110, 470));
             Button_Exit.sizeButton(new Vector2(160, 83));
             //////////////////////////////////////////////////////////////////////////////////////////////////////////
-            Scrolling_Background_1 = new MainScrolling(Content.Load<Texture2D>("Background_01"), new Rectangle(0, 0, 2732, 768));
+            Scrolling_Background_1 = new MainScrolling(Content.Load<Texture2D>("Background"), new Rectangle(0, 0, 2732, 2304));
             Scrolling_Background_2 = new MainScrolling(Content.Load<Texture2D>("Background_01"), new Rectangle(2732, 0, 2732, 768));
 
             ScreenWidth = GraphicsDevice.Viewport.Width;
@@ -84,7 +84,7 @@ namespace Cleaning_the_forest
 
         protected void CreateNewObject()
         {
-            gameObject = new spriteComp(this, ref texture, new Rectangle(1, 1, 885, 95), new Vector2(330, 65));
+            gameObject = new spriteComp(this, ref texture, new Rectangle(1, 1, 484, 75), new Vector2(1, 1));
             Components.Add(gameObject);
         }
 
@@ -115,9 +115,9 @@ namespace Cleaning_the_forest
                 case GameState.Playing:                                 // Игра
                     // Описание движущего фона
                     if (Scrolling_Background_1.Rec_Background.X + Scrolling_Background_1.Rec_Background.Width <= 0)
-                        Scrolling_Background_1.Rec_Background.X = Scrolling_Background_2.Rec_Background.X + Scrolling_Background_2.Tex_Background.Width;
-                    if (Scrolling_Background_2.Rec_Background.X + Scrolling_Background_2.Rec_Background.Width <= 0)
-                        Scrolling_Background_2.Rec_Background.X = Scrolling_Background_1.Rec_Background.X + Scrolling_Background_1.Tex_Background.Width;
+                        Scrolling_Background_1.Rec_Background.X = Scrolling_Background_2.Rec_Background.X + Scrolling_Background_1.Tex_Background.Width;
+
+                    
 
 
 
@@ -130,20 +130,35 @@ namespace Cleaning_the_forest
                     if (nHero == 1) sprite_Hero[1].setinterval(150);
 
 
-
-
-                    if ((sprite_Hero[nHero].Position.X >= ScreenHeight) & (Keyboard.GetState().IsKeyDown(Keys.D)))
+                    if ((sprite_Hero[nHero].Position.Y >= screenHeight - 100) & (Keyboard.GetState().IsKeyDown(Keys.S)))
                     {
-                        sprite_Hero[nHero].Update_AnimationBlackDragon_Stop(gameTime);
+                        sprite_Hero[nHero].Update_AnimationBlackDragon(gameTime);
+                        sprite_Hero[nHero].velosity.Y = 0;
+                        Scrolling_Background_1.UpdateBot_Scrolling_Background();
+                    }
+
+
+                    if ((sprite_Hero[nHero].Position.X >= screenWidth - 300) & (Keyboard.GetState().IsKeyDown(Keys.D)))
+                    {
+                        sprite_Hero[nHero].Update_AnimationBlackDragon(gameTime);
+                        sprite_Hero[nHero].velosity.X = 0;
                         Scrolling_Background_1.UpdateRight_Scrolling_Background();
-                        Scrolling_Background_2.UpdateRight_Scrolling_Background();
                     }
                     else
                     {
-                        if (((sprite_Hero[nHero].Position.X <= 100) & (Keyboard.GetState().IsKeyDown(Keys.A))))
-                            sprite_Hero[nHero].Update_AnimationBlackDragon_Stop(gameTime);
-                        sprite_Hero[nHero].Update_AnimationBlackDragon(gameTime);
+                        if (((sprite_Hero[nHero].Position.X <= 300) & (Keyboard.GetState().IsKeyDown(Keys.A))))
+                        {
+                            sprite_Hero[nHero].Update_AnimationBlackDragon(gameTime);
+                            sprite_Hero[nHero].velosity.X = 0;
+                        }
+                        else
+                        {
+                            sprite_Hero[nHero].Update_AnimationBlackDragon(gameTime);
+                        }
                     }
+
+
+
                     break;
             }
             base.Update(gameTime);
@@ -159,8 +174,6 @@ namespace Cleaning_the_forest
             {
                 case GameState.MainMenu:
                     spriteBatch.Draw(Content.Load<Texture2D>("Picture_StartMenu.png"), new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
-                    base.Draw(gameTime);
-                    //spriteBatch.Draw(GameNameText, positionGameNameText, Color.White);
                     Button_Start.Draw(spriteBatch);
                     Button_Rating.Draw(spriteBatch);
                     Button_Exit.Draw(spriteBatch);
@@ -168,6 +181,7 @@ namespace Cleaning_the_forest
                 case GameState.Playing:
                     Scrolling_Background_1.Draw(spriteBatch);
                     Scrolling_Background_2.Draw(spriteBatch);
+                    base.Draw(gameTime);
                     sprite_Hero[nHero].Draw(spriteBatch);
                     break;
             }

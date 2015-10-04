@@ -22,8 +22,7 @@ namespace Cleaning_the_forest
         public int frameCurrent;
 
         public float timer;
-        public float interval = 90;
-
+        public float interval = 100;
 
         public Hero(Texture2D newTex_BlackDragon, Vector2 newPosition, int newframeHeight, int newframeWidth)
         {
@@ -41,58 +40,46 @@ namespace Cleaning_the_forest
             Position = Position + velosity;
 
 
-            if (Keyboard.GetState().IsKeyDown(Keys.D))
+            if ((!(Keyboard.GetState().IsKeyDown(Keys.W)))&&(!(Keyboard.GetState().IsKeyDown(Keys.A)))&&
+                (!(Keyboard.GetState().IsKeyDown(Keys.S)))&&(!(Keyboard.GetState().IsKeyDown(Keys.D))) && (!(Keyboard.GetState().IsKeyDown(Keys.E))))
             {
-                Right(gametime);
-                velosity.X = 5;
-
+                frameCurrent = 0;
+                velosity = Vector2.Zero;
             }
-            else
+            if (Keyboard.GetState().IsKeyDown(Keys.W)){
+                Top(gametime);
+                velosity.Y = -3;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.A)){
+                Left(gametime);
+                velosity.X = -3;
+            }  
+            if (Keyboard.GetState().IsKeyDown(Keys.S)){
+                Bot(gametime);
+                velosity.Y = 3;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.D)){
+                Right(gametime);
+                velosity.X = 3;
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.E))
             {
-                if (Keyboard.GetState().IsKeyDown(Keys.A) & (Position.X > 100))
-                {
-                    Left(gametime);
-                    velosity.X = -5;
-                }
-                else
-                {
-                    if (velosity.X > 3)
-                    {
-                        frameCurrent = 9;
-                    }
-                    velosity = Vector2.Zero;
-                }
+                Battle(gametime);
             }
         }
 
-        public void Update_AnimationBlackDragon_Stop(GameTime gametime)
+
+        public void Top(GameTime gameTime)
         {
-            Rec_BlackDragon = new Rectangle(frameCurrent * frameWidth, 0, frameWidth, frameHeight);
-            originalPosition = new Vector2(Rec_BlackDragon.Width / 2, Rec_BlackDragon.Height / 2);
-            Position = Position + velosity;
-
-            if (Keyboard.GetState().IsKeyDown(Keys.D))
+            timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            if (timer > interval)
             {
-                Right(gametime);
-                velosity.X = 0;
-
-            }
-            else
-            {
-                if (Keyboard.GetState().IsKeyDown(Keys.A))
-                {
-                    Left(gametime);
-                    velosity.X = 0;
-                }
-                else
-                {
-
-                    velosity = Vector2.Zero;
-                }
+                frameCurrent++;
+                timer = 0;
+                if (frameCurrent < 7 || frameCurrent > 12) frameCurrent = 7;
             }
         }
-
-
         public void Right(GameTime gameTime)
         {
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -100,10 +87,9 @@ namespace Cleaning_the_forest
             {
                 frameCurrent++;
                 timer = 0;
-                if (frameCurrent > 5) frameCurrent = 3;
+                if (frameCurrent < 19 || frameCurrent > 24) frameCurrent = 19;
             }
         }
-
         public void Left(GameTime gameTime)
         {
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -111,7 +97,28 @@ namespace Cleaning_the_forest
             {
                 frameCurrent++;
                 timer = 0;
-                if (frameCurrent > 18 || frameCurrent < 16) frameCurrent = 16;
+                if (frameCurrent < 13 || frameCurrent > 18) frameCurrent = 13;
+            }
+        }
+        public void Bot(GameTime gameTime)
+        {
+            timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            if (timer > interval)
+            {
+                frameCurrent++;
+                timer = 0;
+                if (frameCurrent > 6) frameCurrent = 1;
+            }
+        }
+
+        public void Battle(GameTime gameTime)
+        {
+            timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            if (timer > 150)
+            {
+                frameCurrent++;
+                timer = 0;
+                if (frameCurrent < 25 || frameCurrent > 27) frameCurrent = 25;
             }
         }
 
