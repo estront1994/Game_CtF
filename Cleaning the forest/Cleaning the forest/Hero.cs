@@ -24,6 +24,8 @@ namespace Cleaning_the_forest
         public float timer;
         public float interval = 100;
 
+        public bool w_flag, a_flag, s_flag, d_flag;
+
         public Hero(Texture2D newTex_BlackDragon, Vector2 newPosition, int newframeHeight, int newframeWidth)
         {
 
@@ -43,7 +45,10 @@ namespace Cleaning_the_forest
             if ((!(Keyboard.GetState().IsKeyDown(Keys.W)))&&(!(Keyboard.GetState().IsKeyDown(Keys.A)))&&
                 (!(Keyboard.GetState().IsKeyDown(Keys.S)))&&(!(Keyboard.GetState().IsKeyDown(Keys.D))) && (!(Keyboard.GetState().IsKeyDown(Keys.E))))
             {
-                frameCurrent = 0;
+                if (w_flag == true) frameCurrent = 7;
+                if (a_flag == true) frameCurrent = 13;
+                if (s_flag == true) frameCurrent = 0;
+                if (d_flag == true) frameCurrent = 19;
                 velosity = Vector2.Zero;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.W)){
@@ -72,6 +77,8 @@ namespace Cleaning_the_forest
 
         public void Top(GameTime gameTime)
         {
+            a_flag = s_flag = d_flag = false;
+            w_flag = true;
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (timer > interval)
             {
@@ -82,6 +89,8 @@ namespace Cleaning_the_forest
         }
         public void Right(GameTime gameTime)
         {
+            w_flag = a_flag = s_flag = false;
+            d_flag = true;
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (timer > interval)
             {
@@ -92,6 +101,8 @@ namespace Cleaning_the_forest
         }
         public void Left(GameTime gameTime)
         {
+            w_flag = s_flag = d_flag = false;
+            a_flag = true;
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (timer > interval)
             {
@@ -102,6 +113,8 @@ namespace Cleaning_the_forest
         }
         public void Bot(GameTime gameTime)
         {
+            w_flag = a_flag = d_flag = false;
+            s_flag = true;
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (timer > interval)
             {
